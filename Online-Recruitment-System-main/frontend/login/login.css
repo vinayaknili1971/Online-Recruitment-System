@@ -1,0 +1,112 @@
+/* Extra styling on top of applicant.css's design system, specific to the
+   shared login screen. */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    margin: 2rem auto;
+}
+
+.role-toggle {
+    display: flex;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.role-toggle-btn {
+    flex: 1;
+    padding: 0.55rem 0;
+    border: none;
+    background: transparent;
+    border-radius: calc(var(--radius-sm) - 2px);
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.role-toggle-btn.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--text-main);
+}
+
+.login-error {
+    color: var(--status-rejected);
+    background: var(--status-rejected-bg);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.75rem;
+    font-size: 0.825rem;
+    min-height: 0;
+    display: none;
+    text-align: left;
+}
+
+.login-error.visible {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.demo-hint {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1rem;
+    background: var(--bg-tertiary);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--radius-sm);
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.demo-hint strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.demo-hint-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.2rem 0;
+}
+
+.demo-hint-row code {
+    color: var(--color-secondary);
+    font-size: 0.775rem;
+}
+
+.login-footer-note {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: 0.825rem;
+    color: var(--text-muted);
+}
+
+.login-footer-note a {
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer-note a:hover {
+    text-decoration: underline;
+}
+
+.hidden-form {
+    display: none;
+}

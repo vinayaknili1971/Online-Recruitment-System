@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Online Recruitment System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Reuses the applicant module's design system so every screen in the
+         system shares one look. -->
+    <link rel="stylesheet" href="../applicant/applicant.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </div>
+        <h1 class="login-title">Online Recruitment System</h1>
+        <p class="login-subtitle">Sign in to the Applicant or Admin module</p>
+
+        <div class="login-card">
+            <div class="role-toggle" role="tablist" aria-label="Login as">
+                <button type="button" class="role-toggle-btn active" data-role="applicant" id="role-applicant-btn">Applicant</button>
+                <button type="button" class="role-toggle-btn" data-role="admin" id="role-admin-btn">Admin</button>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group text-left" style="margin-bottom: 1.25rem;">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="login-email" class="input-control" required placeholder="name@example.com" value="jane.doe@example.com">
+                </div>
+                <div class="form-group text-left" style="margin-bottom: 0.5rem;">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="login-password" class="input-control" required placeholder="••••••••" value="applicant123">
+                </div>
+                <p class="login-error" id="login-error"></p>
+
+                <button type="submit" class="login-btn" style="margin-top: 1rem;">
+                    <span id="login-btn-label">Sign In as Applicant</span>
+                </button>
+            </form>
+
+            <div class="demo-hint">
+                <strong>Demo accounts</strong>
+                <div class="demo-hint-row"><span>Applicant</span><code>jane.doe@example.com / applicant123</code></div>
+                <div class="demo-hint-row"><span>Admin</span><code>admin@example.com / Admin12345</code></div>
+            </div>
+
+            <p class="login-footer-note" id="register-toggle-row">
+                New applicant? <a href="#" id="register-link">Create an account</a>
+            </p>
+
+            <form id="register-form" class="hidden-form">
+                <div class="form-group text-left" style="margin-bottom: 1rem;">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="register-name" class="input-control" placeholder="e.g. Alex Rivera">
+                </div>
+                <div class="form-group text-left" style="margin-bottom: 1rem;">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" id="register-email" class="input-control" placeholder="you@example.com">
+                </div>
+                <div class="form-group text-left" style="margin-bottom: 0.5rem;">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="register-password" class="input-control" placeholder="Choose a password">
+                </div>
+                <p class="login-error" id="register-error"></p>
+                <button type="submit" class="login-btn" style="margin-top: 0.75rem;">
+                    <span>Create Account &amp; Sign In</span>
+                </button>
+                <p class="login-footer-note"><a href="#" id="back-to-login-link">Back to sign in</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="../shared/apiClient.js"></script>
+    <script src="./login.js"></script>
+</body>
+</html>
